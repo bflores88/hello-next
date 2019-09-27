@@ -19,6 +19,11 @@
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/p/[id]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+
     ]
   }
 }

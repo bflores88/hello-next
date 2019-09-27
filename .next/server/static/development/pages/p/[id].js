@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1893,61 +1893,59 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/post.js":
-/*!***********************!*\
-  !*** ./pages/post.js ***!
-  \***********************/
+/***/ "./pages/p/[id].js":
+/*!*************************!*\
+  !*** ./pages/p/[id].js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-var _jsxFileName = "/Users/meowmeow/NextJs/hello-next/pages/post.js";
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/MyLayout */ "./components/MyLayout.js");
+var _jsxFileName = "/Users/meowmeow/NextJs/hello-next/pages/p/[id].js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-const Post = () => {
+function Post() {
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
   return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
-    __self: undefined
+    __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
-    __self: undefined
-  }, router.query.title), __jsx("p", {
+    __self: this
+  }, router.query.id), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
-    __self: undefined
-  }, "This is the blog post content"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Post);
+    __self: this
+  }, "This is the blog post conotent."));
+}
 
 /***/ }),
 
-/***/ 4:
-/*!*****************************!*\
-  !*** multi ./pages/post.js ***!
-  \*****************************/
+/***/ 5:
+/*!*******************************!*\
+  !*** multi ./pages/p/[id].js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/meowmeow/NextJs/hello-next/pages/post.js */"./pages/post.js");
+module.exports = __webpack_require__(/*! /Users/meowmeow/NextJs/hello-next/pages/p/[id].js */"./pages/p/[id].js");
 
 
 /***/ }),
@@ -2096,4 +2094,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=post.js.map
+//# sourceMappingURL=[id].js.map
