@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -176,8 +176,8 @@ const layoutStyle = {
   border: '1px solid #DDD'
 };
 
-const withLayout = Page => {
-  return () => __jsx("div", {
+const Layout = props => {
+  return __jsx("div", {
     style: layoutStyle,
     __source: {
       fileName: _jsxFileName,
@@ -190,16 +190,10 @@ const withLayout = Page => {
       lineNumber: 12
     },
     __self: undefined
-  }), __jsx(Page, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }));
+  }), props.children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (withLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
 
@@ -1916,19 +1910,25 @@ var _jsxFileName = "/Users/meowmeow/NextJs/hello-next/pages/about.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const About = () => __jsx("p", {
+const About = () => __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 3
+    lineNumber: 4
   },
   __self: undefined
-}, "This is the about page");
+}, __jsx("p", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, "This is the about page"));
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"])(About));
+/* harmony default export */ __webpack_exports__["default"] = (About);
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/

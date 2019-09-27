@@ -85,32 +85,24 @@ var layoutStyle = {
   border: '1px solid #DDD'
 };
 
-var withLayout = function withLayout(Page) {
-  return function () {
-    return __jsx("div", {
-      style: layoutStyle,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
-    }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }), __jsx(Page, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }));
-  };
+var Layout = function Layout(props) {
+  return __jsx("div", {
+    style: layoutStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }), props.children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (withLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
 
@@ -10110,16 +10102,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var About = function About() {
-  return __jsx("p", {
+  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 4
     },
     __self: this
-  }, "This is the about page");
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, "This is the about page"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"])(About));
+/* harmony default export */ __webpack_exports__["default"] = (About);
 
 /***/ }),
 

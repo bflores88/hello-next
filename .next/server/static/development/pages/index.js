@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -176,8 +176,8 @@ const layoutStyle = {
   border: '1px solid #DDD'
 };
 
-const withLayout = Page => {
-  return () => __jsx("div", {
+const Layout = props => {
+  return __jsx("div", {
     style: layoutStyle,
     __source: {
       fileName: _jsxFileName,
@@ -190,16 +190,10 @@ const withLayout = Page => {
       lineNumber: 12
     },
     __self: undefined
-  }), __jsx(Page, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }));
+  }), props.children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (withLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
 
@@ -1908,27 +1902,101 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blog; });
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/meowmeow/NextJs/hello-next/pages/index.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-const Home = () => __jsx("p", {
+
+function getPosts() {
+  return [{
+    id: 'hello-nextjs',
+    title: 'Hello Next.js'
+  }, {
+    id: 'learn-nextjs',
+    title: 'Learn Next.js is awesome'
+  }, {
+    id: 'deploy-nextjs',
+    title: 'Deploy apps with ZEIT'
+  }];
+}
+
+const PostLink = ({
+  post
+}) => __jsx("li", {
+  className: "jsx-563922568",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 3
+    lineNumber: 13
   },
   __self: undefined
-}, "Hello Next.js");
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  href: "/p/[id]",
+  as: `/p/${post.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 14
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "jsx-563922568",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 15
+  },
+  __self: undefined
+}, post.title)), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  id: "563922568",
+  __self: undefined
+}, "li.jsx-563922568{list-style:none;margin:5px 0;}a.jsx-563922568{-webkit-text-decoration:none;text-decoration:none;color:blue;font-family:'Arial';}a.jsx-563922568:hover{opacity:0.6;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tZW93bWVvdy9OZXh0SnMvaGVsbG8tbmV4dC9wYWdlcy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFnQmMsQUFHcUIsQUFLSyxBQU1ULFlBQ2IsSUFYYyxhQUNkLHFCQUlZLFdBQ1Msb0JBQ3JCIiwiZmlsZSI6Ii9Vc2Vycy9tZW93bWVvdy9OZXh0SnMvaGVsbG8tbmV4dC9wYWdlcy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9NeUxheW91dCc7XG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnO1xuXG5mdW5jdGlvbiBnZXRQb3N0cygpIHtcblx0cmV0dXJuIFtcblx0XHR7IGlkOiAnaGVsbG8tbmV4dGpzJywgdGl0bGU6ICdIZWxsbyBOZXh0LmpzJyB9LFxuXHRcdHsgaWQ6ICdsZWFybi1uZXh0anMnLCB0aXRsZTogJ0xlYXJuIE5leHQuanMgaXMgYXdlc29tZScgfSxcblx0XHR7IGlkOiAnZGVwbG95LW5leHRqcycsIHRpdGxlOiAnRGVwbG95IGFwcHMgd2l0aCBaRUlUJyB9LFxuXHRdO1xufVxuXG5jb25zdCBQb3N0TGluayA9ICh7IHBvc3QgfSkgPT4gKFxuXHQ8bGk+XG5cdFx0PExpbmsgaHJlZj1cIi9wL1tpZF1cIiBhcz17YC9wLyR7cG9zdC5pZH1gfT5cblx0XHRcdDxhPntwb3N0LnRpdGxlfTwvYT5cblx0XHQ8L0xpbms+XG5cdFx0PHN0eWxlIGpzeD57YFxuXHRcdFx0bGkge1xuXHRcdFx0XHRsaXN0LXN0eWxlOiBub25lO1xuXHRcdFx0XHRtYXJnaW46IDVweCAwO1xuXHRcdFx0fVxuXG5cdFx0XHRhIHtcblx0XHRcdFx0dGV4dC1kZWNvcmF0aW9uOiBub25lO1xuXHRcdFx0XHRjb2xvcjogYmx1ZTtcblx0XHRcdFx0Zm9udC1mYW1pbHk6ICdBcmlhbCc7XG5cdFx0XHR9XG5cblx0XHRcdGE6aG92ZXIge1xuXHRcdFx0XHRvcGFjaXR5OiAwLjY7XG5cdFx0XHR9XG5cdFx0YH08L3N0eWxlPlxuXHQ8L2xpPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQmxvZygpIHtcblx0cmV0dXJuIChcblx0XHQ8TGF5b3V0PlxuXHRcdFx0PGgxPk15IEJsb2c8L2gxPlxuXHRcdFx0PHVsPlxuXHRcdFx0XHR7Z2V0UG9zdHMoKS5tYXAoKHBvc3QpID0+IChcblx0XHRcdFx0XHQ8UG9zdExpbmsga2V5PXtwb3N0LmlkfSBwb3N0PXtwb3N0fSAvPlxuXHRcdFx0XHQpKX1cblx0XHRcdDwvdWw+XG5cdFx0XHQ8c3R5bGUganN4PntgXG5cdFx0XHRcdGgxIHtcblx0XHRcdFx0XHRmb250LWZhbWlseTogJ0FyaWFsJztcblx0XHRcdFx0fVxuXHRcdFx0YH08L3N0eWxlPlxuXHRcdDwvTGF5b3V0PlxuXHQpO1xufVxuIl19 */\n/*@ sourceURL=/Users/meowmeow/NextJs/hello-next/pages/index.js */"));
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"])(Home));
+function Blog() {
+  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }, __jsx("h1", {
+    className: "jsx-3156659932",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }, "My Blog"), __jsx("ul", {
+    className: "jsx-3156659932",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }, getPosts().map(post => __jsx(PostLink, {
+    key: post.id,
+    post: post,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3156659932",
+    __self: this
+  }, "h1.jsx-3156659932{font-family:'Arial';}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tZW93bWVvdy9OZXh0SnMvaGVsbG8tbmV4dC9wYWdlcy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE0Q2UsQUFHMEIsb0JBQ3JCIiwiZmlsZSI6Ii9Vc2Vycy9tZW93bWVvdy9OZXh0SnMvaGVsbG8tbmV4dC9wYWdlcy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9NeUxheW91dCc7XG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnO1xuXG5mdW5jdGlvbiBnZXRQb3N0cygpIHtcblx0cmV0dXJuIFtcblx0XHR7IGlkOiAnaGVsbG8tbmV4dGpzJywgdGl0bGU6ICdIZWxsbyBOZXh0LmpzJyB9LFxuXHRcdHsgaWQ6ICdsZWFybi1uZXh0anMnLCB0aXRsZTogJ0xlYXJuIE5leHQuanMgaXMgYXdlc29tZScgfSxcblx0XHR7IGlkOiAnZGVwbG95LW5leHRqcycsIHRpdGxlOiAnRGVwbG95IGFwcHMgd2l0aCBaRUlUJyB9LFxuXHRdO1xufVxuXG5jb25zdCBQb3N0TGluayA9ICh7IHBvc3QgfSkgPT4gKFxuXHQ8bGk+XG5cdFx0PExpbmsgaHJlZj1cIi9wL1tpZF1cIiBhcz17YC9wLyR7cG9zdC5pZH1gfT5cblx0XHRcdDxhPntwb3N0LnRpdGxlfTwvYT5cblx0XHQ8L0xpbms+XG5cdFx0PHN0eWxlIGpzeD57YFxuXHRcdFx0bGkge1xuXHRcdFx0XHRsaXN0LXN0eWxlOiBub25lO1xuXHRcdFx0XHRtYXJnaW46IDVweCAwO1xuXHRcdFx0fVxuXG5cdFx0XHRhIHtcblx0XHRcdFx0dGV4dC1kZWNvcmF0aW9uOiBub25lO1xuXHRcdFx0XHRjb2xvcjogYmx1ZTtcblx0XHRcdFx0Zm9udC1mYW1pbHk6ICdBcmlhbCc7XG5cdFx0XHR9XG5cblx0XHRcdGE6aG92ZXIge1xuXHRcdFx0XHRvcGFjaXR5OiAwLjY7XG5cdFx0XHR9XG5cdFx0YH08L3N0eWxlPlxuXHQ8L2xpPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQmxvZygpIHtcblx0cmV0dXJuIChcblx0XHQ8TGF5b3V0PlxuXHRcdFx0PGgxPk15IEJsb2c8L2gxPlxuXHRcdFx0PHVsPlxuXHRcdFx0XHR7Z2V0UG9zdHMoKS5tYXAoKHBvc3QpID0+IChcblx0XHRcdFx0XHQ8UG9zdExpbmsga2V5PXtwb3N0LmlkfSBwb3N0PXtwb3N0fSAvPlxuXHRcdFx0XHQpKX1cblx0XHRcdDwvdWw+XG5cdFx0XHQ8c3R5bGUganN4PntgXG5cdFx0XHRcdGgxIHtcblx0XHRcdFx0XHRmb250LWZhbWlseTogJ0FyaWFsJztcblx0XHRcdFx0fVxuXHRcdFx0YH08L3N0eWxlPlxuXHRcdDwvTGF5b3V0PlxuXHQpO1xufVxuIl19 */\n/*@ sourceURL=/Users/meowmeow/NextJs/hello-next/pages/index.js */"));
+}
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2058,6 +2126,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 
